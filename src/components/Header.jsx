@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom";
 import styled from "styled-components"
 
-const Header = () => {
+const Header = ({length}) => {
   return (
     <HeaderContainer>
         <span>Learn some context</span>
@@ -13,7 +13,7 @@ const Header = () => {
           </ListItem>
           <ListItem>
             <HeaderLink to="Cart" className={(isActive)=> isActive ? "active" : undefined}>
-              Cart
+              Cart({length})
             </HeaderLink>
           </ListItem>
         </Navul>
