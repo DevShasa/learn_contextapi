@@ -3,18 +3,13 @@ import fakeData from '../utils/createFakeData';
 import SingleProduct from './SingleProduct';
 import styled from "styled-components";
 
-const Home = ({ cart, setCart }) => {
+const Home = () => {
   const [products] = useState(fakeData(20))
 
   return (
     <ProductArrayDisplay>
       {products.map((prod)=>(
-        <SingleProduct 
-            key={prod.id} 
-            prod={prod}
-            cart = {cart}
-            setCart = {setCart}
-        />
+        <SingleProduct key={prod.id} prod={prod}/>
       ))}
     </ProductArrayDisplay>
   )

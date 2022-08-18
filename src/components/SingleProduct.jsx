@@ -1,7 +1,9 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import styled from 'styled-components';
+import { cartContext } from "../context/CartContext"; 
 
-const SingleProduct = ({prod, cart, setCart}) => {
+const SingleProduct = ({prod}) => {
+    const { cart, setCart } = useContext(cartContext)
     const {id,  name, price, image } = prod
     return (
         <SingleProductDiv>

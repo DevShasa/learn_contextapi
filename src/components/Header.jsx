@@ -1,7 +1,12 @@
+import { useContext } from "react";
 import { NavLink } from "react-router-dom";
 import styled from "styled-components"
+import { cartContext } from "../context/CartContext"; 
 
-const Header = ({length}) => {
+const Header = () => {
+
+  const { cart } = useContext(cartContext)
+
   return (
     <HeaderContainer>
         <span>Learn some context</span>
@@ -13,7 +18,7 @@ const Header = ({length}) => {
           </ListItem>
           <ListItem>
             <HeaderLink to="Cart" className={(isActive)=> isActive ? "active" : undefined}>
-              Cart({length})
+              Cart({cart.length})
             </HeaderLink>
           </ListItem>
         </Navul>

@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import SingleProduct from './SingleProduct';
 import styled from "styled-components";
+import { cartContext } from '../context/CartContext';
 
-const Cart = ({cart, setCart}) => {
+const Cart = () => {
+  const {cart, setCart} = useContext(cartContext)
+
   return (
     <>
       {cart.length !== 0 && (
